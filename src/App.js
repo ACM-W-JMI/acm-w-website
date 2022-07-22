@@ -4,19 +4,30 @@ import Home from "./Pages/Home/Home";
 import Teams from "./Pages/Teams/Teams";
 import Blogs from "./Pages/Blogs/Blogs";
 import Events from "./Pages/Events/Events";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes as Switching } from "react-router-dom";
+import { useState } from "react";
+import { MenuRounded } from "@material-ui/icons";
+import { IconButton } from "@material-ui/core";
 
 function App() {
+  const [navToggle, setNavToggle] = useState(false);
+
   return (
     <div className="App">
-      <SideBar />
+      <SideBar navToggle={navToggle}/>
+      <div className="ham-burger-menu">
+        <IconButton onClick={() => setNavToggle(!navToggle)}>
+          <MenuRounded />
+        </IconButton>
+      </div>
+
       <MainContentStyled>
-        <Routes>
+      <Switching>
           <Route path="/" element={<Home />} />
           <Route path="/team" element={<Teams />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/events" element={<Events />} />
-        </Routes>
+        </Switching>
       </MainContentStyled>
     </div>
   );

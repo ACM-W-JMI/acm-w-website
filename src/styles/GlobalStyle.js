@@ -32,8 +32,20 @@ const GlobalStyled = createGlobalStyle`
     font-size: 1.15rem;
 }
 body{
-    background-color: white;
+    background-color: #FFFFFF;
     color:var(--font-light-color)
+}
+body::-webkit-scrollbar{
+    width: 9px;
+    background-color: #383838;
+}
+body::-webkit-scrollbar-thumb{
+    border-radius:10px;    
+    background-color: #6b6b6b;
+}
+body::-webkit-scrollbar-track{
+    border-radius:10px;    
+    background-color: #383838;
 }
 a{
     font-family: inherit;
@@ -41,5 +53,36 @@ a{
     font-size: 1rem;
     text-decoration: none;
 }
+h1{
+    font-size: 2rem;
+    color: var(--white-color);
+    span{
+        font-size: 3rem;
+    }
+}
+span{
+    color: var(--primary-color);
+}
+.ham-burger-menu{
+    display: none;
+position: absolute;
+right: 10%;
+top: 2%;
+z-index: 15;
+svg{
+    font-size:3rem;
+}
+}
+.nav-toggle{
+    transform: translateX(0);
+    z-index: 20;
+}
+@media screen and (max-width: 1200px) {
+    .ham-burger-menu{
+        display: block;
+    }
+
+  }
+
 `;
 export default GlobalStyled;
