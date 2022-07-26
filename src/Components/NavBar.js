@@ -87,12 +87,12 @@ const NavBarStyled = styled.div`
         &:active,
         &:focus {
           background-color: var(--primary-color);
-          color: initial;
+          color: white;
         }
         &:hover {
           cursor: pointer;
           background-color: var(--primary-color);
-          color: initial;
+          color: white;
         }
         &::before {
           content: "";

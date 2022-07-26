@@ -8,6 +8,7 @@ import { Route, Routes as Switching } from "react-router-dom";
 import { useState } from "react";
 import { MenuRounded } from "@material-ui/icons";
 import { IconButton } from "@material-ui/core";
+import Contacts from "./Pages/Contact/Contacts";
 
 function App() {
   const [navToggle, setNavToggle] = useState(false);
@@ -27,6 +28,7 @@ function App() {
           <Route path="/team" element={<Teams />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/contact" element={<Contacts />} />
         </Switching>
       </MainContentStyled>
     </div>
