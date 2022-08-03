@@ -11,6 +11,8 @@ import Shairin from "../Assets/Shairin.jpg";
 import Wadiya from "../Assets/Wadiya.jpeg";
 import Sara from "../Assets/Sara.jpg";
 import Fatima from "../Assets/Fatima.jpg";
+import Heeba from "../Assets/Heeba.jpg";
+import Arshmah from "../Assets/Arshmah.jpg";
 export const TeamList = [
   {
     image: Arefa,
@@ -62,6 +64,16 @@ export const TeamList = [
     name: "Shairin Meraj",
     position: "Events Head",
   },
+  {
+    image: Heeba,
+    name: "Heeba Khan",
+    position: "Content Team Head",
+  },
+  {
+    image: Arshmah,
+    name: "Arshmah Saeed",
+    position: "Content Team Head",
+  },
 ];
 export const TechTeamList = [
   {
@@ -77,11 +89,6 @@ export const TechTeamList = [
   {
     image: Fatima,
     name: "Fatima Shafique",
-    position: "Technical Team Member",
-  },
-  {
-    image: Sara,
-    name: "Sara Yunus",
     position: "Technical Team Member",
   },
 ];
@@ -121,5 +128,22 @@ export const DesignTeamList = [
     image: Wadiya,
     name: "Wadiya Ali",
     position: "Design Head",
+  },
+];
+export const ContentTeamList = [
+  {
+    image: Heeba,
+    name: "Heeba Khan",
+    position: "Content Team Head",
+  },
+  {
+    image: Arshmah,
+    position: "Content Team Head",
+    name: "Arshmah Saeed",
+  },
+  {
+    image: Sara,
+    name: "Sara Yunus",
+    position: "Content Team Member",
   },
 ];

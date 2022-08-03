@@ -2,12 +2,55 @@ import React from "react";
 import styled from "styled-components";
 import ContactItem from "./ContactItem";
 import { InnerLayout, MainLayout } from "../../styles/Layouts";
-import { Email, Home, PhoneInTalk } from "@material-ui/icons";
+import { Email } from "@material-ui/icons";
+import HomeWorkIcon from "@material-ui/icons/HomeWork";
+import { useState } from "react";
 
 function Contact() {
-  const phone = <PhoneInTalk />;
-  const home = <Home />;
-  const email = <Email />;
+  const [msg, setMsg] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const handleChange = (event) => {
+    let name = event.target.name;
+    let value = event.target.value;
+    setMsg({ ...msg, [name]: value });
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { name, email, subject, message } = msg;
+    try {
+      const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+        }),
+      });
+      if (res.status === 400 || !res) {
+        window.alert("Message not sent, try agin letter");
+      } else {
+        window.alert("Message Sent");
+        setMsg({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const home = <HomeWorkIcon />;
+  const emailI = <Email />;
   return (
     <MainLayout>
       <h1>Contact</h1>
@@ -17,39 +60,59 @@ function Contact() {
             <div className="contact-title">
               <h4>Get in Touch</h4>
             </div>
-            <form className="form" method="POST">
+            <form className="form" method="POST" onSubmit={handleSubmit}>
               <div className="form-filling">
                 <label htmlFor="name">Enter your Name</label>
-                <input type="text" id="name" name="name" />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={msg.name}
+                  onChange={handleChange}
+                />
               </div>
               <div className="form-filling">
                 <label htmlFor="email">Enter your Email</label>
-                <input type="email" id="email" name="phone" />
+                <input
+                  type="email"
+                  id="email"
+                  name="phone"
+                  value={msg.email}
+                  onChange={handleChange}
+                />
               </div>
               <div className="form-filling">
-                <label htmlFor="subject">Enter your Subject</label>
-                <input type="text" id="subject" name="subject" />
+                <label htmlFor="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={msg.message}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="form-filling">
+                <label htmlFor="subject">Write your message</label>
+                <input
+                  type="text"
+                  id="desc"
+                  name="desc"
+                  value={msg.message}
+                  onChange={handleChange}
+                />
               </div>
               <div className="form-filling f-button">
-                <button className="buttonSend">Send</button>
+                <button className="buttonSend" type="submit">
+                  Send
+                </button>
               </div>
             </form>
           </div>
           <div className="right-content">
-            <ContactItem
-              icon={phone}
-              title={"Phone"}
-              contact={"+91-7489171187"}
-            />
-            <ContactItem
-              icon={email}
-              title={"Email"}
-              contact={"fizaayesha696@gmail.com"}
-            />
+            <ContactItem icon={emailI} contact={"acmw.jmi@gmail.com"} />
             <ContactItem
               icon={home}
-              title={"Address"}
-              contact={"Raigarh, Chattisgarh, India"}
+              contact={"Jamia Millia Islamia, Jamia Nagar, New Delhi"}
             />
           </div>
         </InnerLayout>

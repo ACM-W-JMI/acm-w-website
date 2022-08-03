@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../Assets/acm logo.jpg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Instagram, LinkedIn } from "@material-ui/icons";
 function NavBar() {
   return (
@@ -39,8 +39,15 @@ function NavBar() {
       <footer className="footer">
         <div className="subFooter">
           <img src={logo} alt="" /> ACM-W JMI
-          <LinkedIn htmlColor=" #0444AC" className="icons"/>
-          <Instagram htmlColor=" #0444AC" className="icons" />
+          <a
+            href="https://www.linkedin.com/in/acm-w-jmi-31611a23b/"
+            // target="_blank"
+          >
+            <LinkedIn htmlColor="blue" className="icons" />
+          </a>
+          <a href="https://www.instagram.com/acmw_jmi/">
+            <Instagram htmlColor=" #FF00C1" className="icons" />
+          </a>
         </div>
       </footer>
     </NavBarStyled>

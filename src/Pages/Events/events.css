@@ -108,6 +108,10 @@ h1, h2 {
     justify-content: center;
 }
 
+.eventContent h2 {
+    font-size: 23px;
+}
+
 .noEvents {
     font-size: 20px;
     font-style: bold;

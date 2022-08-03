@@ -6,6 +6,7 @@ import {
   SocialTeamList,
   DesignTeamList,
   OperationTeamList,
+  ContentTeamList,
 } from "../../data/TeamLists";
 import TeamItem from "../../items/TeamItem";
 import "./teams.css";
@@ -113,6 +114,25 @@ function Teams() {
         <div className="teams">
           <div className="teamList">
             {OperationTeamList.map((teamItem, key) => {
+              return (
+                <TeamItem
+                  key={key}
+                  image={teamItem.image}
+                  name={teamItem.name}
+                  position={teamItem.position}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div className="section_one">
+        <h2 className="sec_head">Content Team</h2>
+        <div className="teams">
+          <div className="teamList">
+            {ContentTeamList.map((teamItem, key) => {
               return (
                 <TeamItem
                   key={key}

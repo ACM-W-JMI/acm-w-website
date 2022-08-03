@@ -10,6 +10,7 @@
     margin-top: 1rem;
 }
 
+
 .teamList {
     list-style-type: none;
     display: contents;
@@ -50,6 +51,7 @@ h1, h2 {
     background-size: cover;
 }
 
+
 .teamItem div:hover {
     border: 4px solid var(--sidebar-dark-color);
     background-position: center;
@@ -88,5 +90,60 @@ h1, h2 {
     .teams {
         padding-left: 10px;
         padding-right: 10px;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .teams {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-left: 30px;
+        margin-top: 1rem;
+        padding-right: 30px;
+    }
+
+    .teamItem {
+        width: 130px;
+        padding-bottom: 15px;
+        gap: 1rem;
+    }
+
+    .teamItem div {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid #0444AC;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .teamItem div:hover {
+        border: 2px solid var(--sidebar-dark-color);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .teamItem h2 {
+        color: black;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-weight: bolder;
+        font-size: 13px;
+    }
+
+    .teamItem h4 {
+        color: rgb(124, 124, 124);
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 12px;
+        font-weight: bold;
     }
 }
