@@ -7,20 +7,12 @@ import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import { useState } from "react";
 
 function Contact() {
-  const [msg, setMsg] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  const handleChange = (event) => {
-    let name = event.target.name;
-    let value = event.target.value;
-    setMsg({ ...msg, [name]: value });
-  };
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
   const handleSubmit = async (event) => {
+    console.log(name, email, message);
     event.preventDefault();
-    const { name, email, subject, message } = msg;
     try {
       const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/contact`, {
         method: "POST",
@@ -30,7 +22,6 @@ function Contact() {
         body: JSON.stringify({
           name,
           email,
-          subject,
           message,
         }),
       });
@@ -38,12 +29,9 @@ function Contact() {
         window.alert("Message not sent, try agin letter");
       } else {
         window.alert("Message Sent");
-        setMsg({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
+        setName("");
+        setEmail("");
+        setMessage("");
       }
     } catch (error) {
       console.log(error);
@@ -60,49 +48,48 @@ function Contact() {
             <div className="contact-title">
               <h4>Get in Touch</h4>
             </div>
-            <form className="form" method="POST" onSubmit={handleSubmit}>
+            <form className="form">
               <div className="form-filling">
                 <label htmlFor="name">Enter your Name</label>
                 <input
+                  placeholder="Enter your name"
                   type="text"
                   id="name"
                   name="name"
-                  value={msg.name}
-                  onChange={handleChange}
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
                 />
               </div>
               <div className="form-filling">
                 <label htmlFor="email">Enter your Email</label>
                 <input
-                  type="email"
-                  id="email"
-                  name="phone"
-                  value={msg.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="form-filling">
-                <label htmlFor="subject">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={msg.message}
-                  onChange={handleChange}
+                    placeholder="Enter your Email"
+                    type="email"
+                    id="email"
+                    name="phone"
+                    value={email}
+                    onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                 />
               </div>
               <div className="form-filling">
                 <label htmlFor="subject">Write your message</label>
                 <input
+                    placeholder="Write your message"
                   type="text"
                   id="desc"
                   name="desc"
-                  value={msg.message}
-                  onChange={handleChange}
+                  value={message}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                  }}
                 />
               </div>
               <div className="form-filling f-button">
-                <button className="buttonSend" type="submit">
+                <button className="buttonSend" onClick={handleSubmit}>
                   Send
                 </button>
               </div>

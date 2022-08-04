@@ -1,9 +1,9 @@
 import React from "react";
-import { NavLink } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import HomeBack from "../../Assets/jmihomeback.jpg";
+import { HashLink } from "react-router-hash-link";
 import "./home.css";
+import About from "../About/About";
 function Home() {
   return (
     <HomeStyled>
@@ -15,11 +15,12 @@ function Home() {
             <p>Jamia Millia Islamia</p>
           </div>
           <div className="aboutBtn routes">
-            {/* <Link href="#about"> */}
-              <NavLink>About</NavLink>
-            {/* </Link> */}
+            <HashLink smooth to="/#about">
+              About
+            </HashLink>
           </div>
         </div>
+        <About />
       </div>
     </HomeStyled>
   );

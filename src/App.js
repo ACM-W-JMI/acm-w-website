@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <SideBar navToggle={navToggle}/>
+      <SideBar navToggle={navToggle} />
       <div className="ham-burger-menu">
         <IconButton onClick={() => setNavToggle(!navToggle)}>
           <MenuRounded />
@@ -23,7 +23,7 @@ function App() {
       </div>
 
       <MainContentStyled>
-      <Switching>
+        <Switching>
           <Route path="/" element={<Home />} />
           <Route path="/team" element={<Teams />} />
           <Route path="/blogs" element={<Blogs />} />
