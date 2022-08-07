@@ -5,7 +5,7 @@ import Tabassum from "../Assets/Tabassum.jpg";
 import Anzil from "../Assets/Anzil.jpg";
 import Noor from "../Assets/Noor.jpg";
 import Aaliyah from "../Assets/Aaliyah.png";
-import Ayesha from "../Assets/Ayesha.jpg";
+import Ayesha from "../Assets/Ayesha.jpeg";
 import Mushabah from "../Assets/Musabah.jpeg";
 import Shairin from "../Assets/Shairin.jpg";
 import Wadiya from "../Assets/Wadiya.jpeg";

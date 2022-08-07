@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../Assets/acm logo.jpg";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Instagram, LinkedIn } from "@material-ui/icons";
 function NavBar() {
   return (
@@ -26,11 +26,6 @@ function NavBar() {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/blogs" activeclassname="active-class">
-            Blogs
-          </NavLink>
-        </li>
-        <li className="nav-item">
           <NavLink to="/contact" activeclassname="active-class">
             Contact
           </NavLink>
@@ -41,7 +36,6 @@ function NavBar() {
           <img src={logo} alt="" /> ACM-W JMI
           <a
             href="https://www.linkedin.com/in/acm-w-jmi-31611a23b/"
-            // target="_blank"
           >
             <LinkedIn htmlColor="blue" className="icons" />
           </a>
