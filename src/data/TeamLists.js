@@ -13,6 +13,7 @@ import Sara from "../Assets/Sara.jpg";
 import Fatima from "../Assets/Fatima.jpg";
 import Heeba from "../Assets/Heeba.jpg";
 import Arshmah from "../Assets/Arshmah.jpg";
+import Taiba from "../Assets/Taiba.jpg";
 export const TeamList = [
   {
     image: Arefa,
@@ -144,6 +145,11 @@ export const ContentTeamList = [
   {
     image: Sara,
     name: "Sara Yunus",
+    position: "Content Team Member",
+  },
+  {
+    image: Taiba,
+    name: "Taiba Quadri",
     position: "Content Team Member",
   },
 ];

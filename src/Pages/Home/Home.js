@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import HomeBack from "../../Assets/jmihomeback.jpg";
+import HomeBack from "../../Assets/bg acmwjmi.jpg";
 import { HashLink } from "react-router-hash-link";
 import "./home.css";
 import About from "../About/About";
@@ -15,7 +15,7 @@ function Home() {
             <p>Jamia Millia Islamia</p>
           </div>
           <div className="aboutBtn routes">
-            <HashLink smooth to="/#about">
+            <HashLink smooth to="/#about" className="aboutTag">
               About
             </HashLink>
           </div>

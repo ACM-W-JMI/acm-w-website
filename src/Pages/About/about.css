@@ -8,6 +8,10 @@
     width: 200px;
 }
 
+.invert {
+    transform: rotate(180deg);
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -27,15 +31,14 @@
 }
 
 .ch {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-weight: bolder;
     font-size: 50px;
     margin-top: 50px;
     margin-bottom: 50px;
+    font-size: 3rem;
 }
 
 .cb {
-    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     padding: 0px 20px 20px 10px;
     text-align: center;
@@ -49,7 +52,6 @@
 .routes a {
     text-decoration: none;
     color: black;
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: x-large;
 }
@@ -127,7 +129,14 @@ hr {
         margin-bottom: 10px;
     }
 
-    .cb {
+    .invert, .revert {
+        color: rgb(124, 124, 124);
+    }
+
+    .cards .cb {
+        color: rgb(124, 124, 124);
+        font-size: 18px;
+        font-weight: bold;
         text-align: center;
         font-size: small;
     }
