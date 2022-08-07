@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background-img {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+    position: relative;
+    object-fit: cover;
+}
+
+.imgCustom {
+    width: 200px;
+}
+
+.routes li {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.routes .aboutStart {
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: x-large;
+}
+
+.routes a:hover {
+    text-decoration: underline;
+}
+
+.routes ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+hr {
+    clear: both;
+    border: none;
+    display: block;
+    width: 100%;
+    background-color: black;
+    height: 2px;
+}
+
+.iconsEle {
+    width: 40px;
+    margin: 3px;
+}
+
+.box2 {
+    width: 100%;
+}
+
+.aboutBtn {
+    display: inline;
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+    background-color: #3ABFFB;
+    padding: 30px 80px 30px 80px;
+    border-radius: 50px;
+}
+
+.box3 {
+    position: absolute;
+    background-color: #fff;
+    padding: 60px 300px 60px 100px;
+    right: 0;
+    top: 50%;
+}
+
+.box3 p {
+    font-family: 'Poppins', sans-serif;
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.iconsEle {
+    width: 40px;
+    margin: 3px;
+}
+
+.sm_d {
+    display: none;
+}
+
+@media screen and (max-width:1280px) {
+    .aboutBtn {
+        bottom: 20px;
+        left: 40px;
+        padding: 10px 50px 10px 50px;
+        border-radius: 50px;
+    }
+
+    .box3 {
+        padding: 20px 100px 20px 50px;
+        right: 0;
+        top: 50%;
+    }
+
+    .box3 p {
+        font-family: 'Poppins', sans-serif;
+        font-size: large;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .routes li {
+        margin-right: 10px;
+    }
+
+    .routes a {
+        font-weight: 400;
+        font-size: medium;
+    }
+
+    .routes ul {
+        flex-direction: row;
+    }
+
+    .aboutBtn {
+        bottom: 10px;
+        left: 10px;
+        padding: 10px 50px 10px 50px;
+        border-radius: 50px;
+    }
+
+    .box3 {
+        padding: 20px 100px 20px 50px;
+        right: 0;
+        top: 50%;
+    }
+
+    .box3 p {
+        font-family: 'Poppins', sans-serif;
+        font-size: large;
+        font-weight: 400;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .sm_d {
+        display: block;
+    }
+
+    .iconsEle {
+        width: 15px;
+    }
+}
+
+@media screen and (max-width:1496px) {
+    .imgCustom {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width:1064px) {
+    .imgCustom {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width:828px) {
+    .imgCustom {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width:676px) {
+    .imgCustom {
+        width: 80px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .routes a {
+        font-weight: 300;
+        font-size: small;
+    }
+}
