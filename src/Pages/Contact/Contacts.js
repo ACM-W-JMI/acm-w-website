@@ -5,6 +5,7 @@ import { InnerLayout, MainLayout } from "../../styles/Layouts";
 import { Email } from "@material-ui/icons";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import { useState } from "react";
+import "./contact.css"
 
 function Contact() {
   const [name, setName] = useState();
@@ -41,7 +42,7 @@ function Contact() {
   const emailI = <Email />;
   return (
     <MainLayout>
-      <h1>Contact</h1>
+      <h1 className="contact-heading">Contact</h1>
       <ContactStyled>
         <InnerLayout className={"contact-section"}>
           <div className="left-content">
@@ -65,12 +66,12 @@ function Contact() {
               <div className="form-filling">
                 <label htmlFor="email">Enter your Email</label>
                 <input
-                    placeholder="Enter your Email"
-                    type="email"
-                    id="email"
-                    name="phone"
-                    value={email}
-                    onChange={(e) => {
+                  placeholder="Enter your Email"
+                  type="email"
+                  id="email"
+                  name="phone"
+                  value={email}
+                  onChange={(e) => {
                     setEmail(e.target.value);
                   }}
                 />
@@ -78,7 +79,7 @@ function Contact() {
               <div className="form-filling">
                 <label htmlFor="subject">Write your message</label>
                 <input
-                    placeholder="Write your message"
+                  placeholder="Write your message"
                   type="text"
                   id="desc"
                   name="desc"
