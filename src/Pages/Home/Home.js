@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import HomeBack from "../../Assets/bg_acmwjmi.jpg";
+import HomeBack from "../../Assets/jmihomeback.jpg";
 import { HashLink } from "react-router-hash-link";
 import "./home.css";
 import About from "../About/About";

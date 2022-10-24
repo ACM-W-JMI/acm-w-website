@@ -6,15 +6,30 @@ import { Email } from "@material-ui/icons";
 import HomeWorkIcon from "@material-ui/icons/HomeWork";
 import { useState } from "react";
 import "./contact.css"
+import toast from "react-hot-toast";
 
 function Contact() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [message, setMessage] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const handleSubmit = async (event) => {
     console.log(name, email, message);
     event.preventDefault();
     try {
+      if(name.length<1 || email.length<1 || message.length<1){
+        toast.error("One of the fields among name, email,message are empty, try again",{
+          style: {
+            backgroundColor:'#0344AC',
+            padding: '16px',
+            color: 'white',
+          },
+          iconTheme: {
+            primary: '#0444AC',
+            secondary: '#ff7675',
+          },
+        });
+        return;
+      }
       const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/contact`, {
         method: "POST",
         headers: {
@@ -27,9 +42,29 @@ function Contact() {
         }),
       });
       if (res.status === 400 || !res) {
-        window.alert("Message not sent, try agin letter");
+        toast.error("Message not sent!",{
+          style: {
+            backgroundColor:'#0344AC',
+            padding: '16px',
+            color: 'white',
+          },
+          iconTheme: {
+            primary: '#0444AC',
+            secondary: '#ff7675',
+          },
+        })
       } else {
-        window.alert("Message Sent");
+        toast.success('Message sent!',{
+          style: {
+            backgroundColor:'#0344AC',
+            padding: '16px',
+            color: 'white',
+          },
+          iconTheme: {
+            primary: '#0444AC',
+            secondary: '#ff7675',
+          },
+        })
         setName("");
         setEmail("");
         setMessage("");

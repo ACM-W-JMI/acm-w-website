@@ -66,6 +66,10 @@ hr {
     padding: 20px 60px 20px 60px;
     border-radius: 50px;
     cursor: pointer;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
 }
 
 .aboutBtn:hover {
@@ -81,6 +85,7 @@ hr {
     text-decoration: none;
     list-style: none;
     list-style-type: none;
+    font-size: bold;
 }
 
 .box3 {
@@ -93,7 +98,7 @@ hr {
 
 .box3 p {
     font-size: x-large;
-    font-weight: 500;
+    font-weight: bolder;
 }
 
 .iconsEle {
