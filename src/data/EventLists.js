@@ -1,5 +1,5 @@
 import event1 from "../Assets/event1.jpeg";
-import event1 from "../Assets/event1.jpg";
+import event2 from "../Assets/event1.jpg";
 export const UpcomingEventLists = [
   {
     image: event2,
